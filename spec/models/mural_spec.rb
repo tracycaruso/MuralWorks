@@ -1,5 +1,7 @@
-require "rails_helper"
-feature "a guest user can view most recent artwork" do
+require 'rails_helper'
+
+RSpec.describe Mural, type: :model do
+
   before(:each) do
     @user = User.create(full_name: "Tracy Caruso", user_name: "Ycartc", email: "tracy@gmail.com", password: "yoloyolo", password_confirmation: "yoloyolo")
     @mural1 = {name: "Mural 1", image: "link_to_image", latitude: 10, longitude: 10, artist_name: "Megan Davis", artist_website: "megan-davis.com", date_created: Time.now, description: "one beautiful mural"}
@@ -13,12 +15,8 @@ feature "a guest user can view most recent artwork" do
     @user.murals.create(@mural4)
   end
 
-  scenario "can view the top 3 most recent artworks" do
-    visit root_path
-    click_link "Most Recent Art"
-    expect(page).to have_content("Mural 4")
-    expect(page).to have_content("Mural 3")
-    expect(page).to have_content("Mural 2")
-    expect(page).to_not have_content("Mural 1")
+  it "can return the last three most recent murals" do
+    expect(Mural.most_recent.count).to eq(3)
   end
+
 end

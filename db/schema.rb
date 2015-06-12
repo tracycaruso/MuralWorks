@@ -11,6 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150612024748) do
+
+  create_table "murals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "artist_name"
+    t.string   "artist_website"
+    t.string   "date_created"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "murals", ["user_id"], name: "index_murals_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "full_name"
+    t.string   "user_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "uid"
+    t.string   "image_url"
+    t.string   "occupation"
+    t.string   "description"
+    t.string   "twitter_link"
+    t.string   "instagram_link"
+    t.string   "linkedin_link"
+    t.string   "ello_link"
+    t.string   "facebook_link"
+    t.string   "dribbble_link"
+    t.string   "website_url"
+    t.boolean  "admin"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end

@@ -1,0 +1,8 @@
+<% provide(:title, "Home") %>
+
+
+<%= link_to "Most Recent Art", "#" %>
+
+<% @murals.most_recent.each do |mural| %>
+  <h1><%= mural.name %></h1>
+<% end %>
