@@ -1489,12 +1489,12 @@ $include-html-global-classes: $include-html-classes;
 
 @font-face {
     font-family: 'aleobold';
-    src: url('aleo-bold-webfont.eot');
-    src: url('aleo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('aleo-bold-webfont.woff2') format('woff2'),
-         url('aleo-bold-webfont.woff') format('woff'),
-         url('aleo-bold-webfont.ttf') format('truetype'),
-         url('aleo-bold-webfont.svg#aleobold') format('svg');
+    src: font-url('aleo-bold-webfont.eot');
+    src: font-url('aleo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('aleo-bold-webfont.woff2') format('woff2'),
+    font-url('aleo-bold-webfont.woff') format('woff'),
+    font-url('aleo-bold-webfont.ttf') format('truetype'),
+    font-url('aleo-bold-webfont.svg#aleobold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -1502,12 +1502,12 @@ $include-html-global-classes: $include-html-classes;
 
 @font-face {
     font-family: 'aleoregular';
-    src: url('aleo-regular-webfont.eot');
-    src: url('aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('aleo-regular-webfont.woff2') format('woff2'),
-         url('aleo-regular-webfont.woff') format('woff'),
-         url('aleo-regular-webfont.ttf') format('truetype'),
-         url('aleo-regular-webfont.svg#aleoregular') format('svg');
+    src: font-url('aleo-regular-webfont.eot');
+    src: font-url('aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('aleo-regular-webfont.woff2') format('woff2'),
+    font-url('aleo-regular-webfont.woff') format('woff'),
+    font-url('aleo-regular-webfont.ttf') format('truetype'),
+    font-url('aleo-regular-webfont.svg#aleoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -1518,24 +1518,24 @@ $include-html-global-classes: $include-html-classes;
 
 @font-face {
     font-family: 'lavanderia_sturdysturdy';
-    src: url('lavanderia_sturdy-webfont.eot');
-    src: url('lavanderia_sturdy-webfont.eot?#iefix') format('embedded-opentype'),
-         url('lavanderia_sturdy-webfont.woff2') format('woff2'),
-         url('lavanderia_sturdy-webfont.woff') format('woff'),
-         url('lavanderia_sturdy-webfont.ttf') format('truetype'),
-         url('lavanderia_sturdy-webfont.svg#lavanderia_sturdysturdy') format('svg');
+    src: font-url('lavanderia_sturdy-webfont.eot');
+    src: font-url('lavanderia_sturdy-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('lavanderia_sturdy-webfont.woff2') format('woff2'),
+    font-url('lavanderia_sturdy-webfont.woff') format('woff'),
+    font-url('lavanderia_sturdy-webfont.ttf') format('truetype'),
+    font-url('lavanderia_sturdy-webfont.svg#lavanderia_sturdysturdy') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
     font-family: 'titillium_weblight';
-    src: url('titillium_web_300-webfont.eot');
-    src: url('titillium_web_300-webfont.eot?#iefix') format('embedded-opentype'),
-         url('titillium_web_300-webfont.woff2') format('woff2'),
-         url('titillium_web_300-webfont.woff') format('woff'),
-         url('titillium_web_300-webfont.ttf') format('truetype'),
-         url('titillium_web_300-webfont.svg#titillium_weblight') format('svg');
+    src: font-url('titillium_web_300-webfont.eot');
+    src: font-url('titillium_web_300-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('titillium_web_300-webfont.woff2') format('woff2'),
+    font-url('titillium_web_300-webfont.woff') format('woff'),
+    font-url('titillium_web_300-webfont.ttf') format('truetype'),
+    font-url('titillium_web_300-webfont.svg#titillium_weblight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
