@@ -1,8 +1,15 @@
-<% provide(:title, "Home") %>
+<% provide(:title, "Murals") %>
+<div class="row">
+  <div class="large-12 columns">
+    <%= link_to "Most Recent Art", "#" %>
+  </div>
+</div>
 
-
-<%= link_to "Most Recent Art", "#" %>
-
-<% @murals.most_recent.each do |mural| %>
-  <h1><%= mural.name %></h1>
-<% end %>
+<div class="row">
+    <% @murals.most_recent.each do |mural| %>
+    <div class="large-6 columns murals-list">
+      <h3><%= link_to mural.name, mural_path(mural) %></h3>
+      <%= image_tag mural.image %>
+    </div>
+    <% end %>
+</div>

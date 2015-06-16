@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="columns large-12">
+    <h3>Edit Profile</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="columns large-12">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :full_name %>
+      <%= f.text_field :full_name %>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <%= f.label :occupation %>
+      <%= f.text_field :occupation %>
+      <%= f.label :user_name %>
+      <%= f.text_field :user_name %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <%= f.label :twitter_link %>
+      <%= f.text_field :twitter_link %>
+      <%= f.label :facebook_link %>
+      <%= f.text_field :facebook_link %>
+      <%= f.label :ello_link %>
+      <%= f.text_field :ello_link %>
+      <%= f.label :dribbble_link %>
+      <%= f.text_field :dribbble_link %>
+      <%= f.label :linkedin_link %>
+      <%= f.text_field :linkedin_link %>
+      <%= f.label :instagram_link %>
+      <%= f.text_field :instagram_link %>
+      <%= f.label :website_url %>
+      <%= f.text_field :website_url %>
+      <%= f.submit "Submit", class: "button round"%>
+    <% end %>
+
+</div>
+</div>

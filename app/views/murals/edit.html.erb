@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="columns large-12">
+    <h3>Edit Street Art</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="columns large-12">
+    <%= form_for(@mural) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude %>
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude %>
+      <%= f.label :artist_name %>
+      <%= f.text_field :artist_name %>
+      <%= f.label :date_created %>
+      <%= f.text_field :date_created %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <%= f.submit "Submit", class: "button round"%>
+    <% end %>
+  </div>
+</div>

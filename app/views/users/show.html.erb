@@ -1,0 +1,60 @@
+<% provide(:title, @user.user_name) %>
+
+
+<div class="row">
+  <div class="columns large-2 user-photo">
+    <%= image_tag @user.image_url %>
+  </div>
+  <div class="columns large-10">
+    <h3>Welcome <%= @user.full_name %></h3>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %> |
+    <%= link_to 'Add Street Art', new_mural_path %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="columns large-12">
+    <h4>Profile</h4>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="columns large-6">
+    <ul class="profile-list">
+
+      <li><span>User Name:</span> <%= @user.user_name %></li>
+      <li><span>Email:</span> <%= @user.email %></li>
+      <li><span>Description:</span> <%= @user.description %></li>
+      <li><span>Occupation:</span> <%= @user.occupation %></li>
+      <li><span>Twitter:</span> <%= link_to @user.twitter_link %></li>
+      <li><span>Facebook:</span> <%= link_to  @user.facebook_link %></li>
+
+    </ul>
+  </div>
+  <div class="columns large-6">
+    <ul class="profile-list">
+      <li><span>Linkedin:</span> <%= link_to  @user.linkedin_link %></li>
+      <li><span>Dribble:</span> <%= link_to  @user.dribbble_link %></li>
+      <li><span>Ello:</span> <%= link_to  @user.ello_link %></li>
+      <li><span>Instagram:</span> <%= link_to @user.instagram_link %></li>
+      <li><span>Website:</span> <%= link_to @user.website_url %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="columns large-12">
+    <h4>Recent Photos</h4>
+    <p>Click image below to add to the mural project or edit</p>
+  </div>
+</div>
+
+<div class="row">
+
+  <% @user.user_images(@user).each do |img| %>
+    <div class="mural_image columns large-3">
+      <%= image_tag img %>
+    </div>
+  <% end %>
+</div>

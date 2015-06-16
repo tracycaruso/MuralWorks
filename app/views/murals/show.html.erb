@@ -1,0 +1,25 @@
+
+<div class="row">
+  <div class="columns large-12">
+    <h3><%= @mural.name %></h3>
+    <%= link_to "Edit Art", edit_mural_path(@mural) %>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="columns large-6">
+    <%= image_tag @mural.image %>
+  </div>
+
+  <div class="columns large-6">
+    <ul class="mural-lists">
+      <li><span>Artist Name: </span><%= @mural.artist_name %></li>
+      <li><span>Date Created: </span><%= @mural.date_created %></li>
+      <li><span>Description: </span><%= @mural.description %></li>
+      <li><span>Latitude: </span><%= @mural.latitude %></li>
+      <li><span>Longitude: </span><%= @mural.longitude %></li>
+    </ul>
+    <%= link_to "View all art", murals_path %>
+  </div>
+</div>

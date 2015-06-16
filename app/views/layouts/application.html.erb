@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= link_to "Register", new_user_path %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-<%= yield %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-</body>
+  <body>
+
+  <div class="outer-nav">
+    <div class="row">
+      <div class="large-2 columns">
+        <h1 class="logo-text"><%= link_to "Street Walk", root_path %></h1>
+      </div>
+      <nav class="large-10 columns">
+        <ul>
+  <li><%= link_to "User Directory", users_path %></li>
+          <li><%= link_to "Recent Art", murals_path %></li>
+          <li><%= link_to "Popular Art", murals_path %></li>
+          <li><%= link_to "Local Art", murals_path %></li>
+          <% if current_user %>
+            <li><%= link_to "Add Art", new_mural_path %><</li>
+            <li><%= link_to "Dashboard", user_path(current_user) %></li>
+            <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          <% else %>
+            <li> <%= link_to "Sign In", "/auth/instagram"%></li>
+          <% end %>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+  </body>
 </html>
