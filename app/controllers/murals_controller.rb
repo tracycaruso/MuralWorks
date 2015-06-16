@@ -28,7 +28,7 @@ class MuralsController < ApplicationController
   def update
     @mural = Mural.find(params[:id])
     @mural.update(mural_params)
-    redirect_to @mural
+    redirect_to @mural   
 
   end
 
