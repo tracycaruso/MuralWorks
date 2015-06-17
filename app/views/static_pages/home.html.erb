@@ -5,8 +5,12 @@
     <h1 class="logo">Street Walk</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur nulla vel purus porttitor, eu dapibus magna suscipit. Duis sed ex justo. Ut fringilla interdum semper. Phasellus maximus, sem eget faucibus blandit, velit libero congue lectus, a facilisis mauris.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur nulla vel purus porttitor, eu dapibus magna suscipit. Duis sed ex justo. Ut fringilla interdum semper. Phasellus maximus, sem eget faucibus blandit, velit libero congue lectus, a facilisis mauris.</p>
-    <%= image_tag('sign-in.png', :class => 'sign-in') %>
-  </div>
+
+      <%= link_to '/auth/instagram' do %>
+        <%= image_tag('sign-in.png', :class => 'sign-in') %>
+      <% end %>
+      
+    </div>
   <div class="large-6 columns">
   </div>
 </div>

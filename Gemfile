@@ -15,6 +15,7 @@ gem 'instagram'
 gem 'hurley'
 gem 'geocoder'
 gem 'foundation-rails'
+gem 'mapbox-rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

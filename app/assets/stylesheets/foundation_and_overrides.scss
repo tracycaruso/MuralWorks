@@ -1685,3 +1685,17 @@ p{
     }
   }
 }
+
+
+.sign-in:hover, .buttons:hover{
+  // opacity: .60;
+  background-color: #000;
+  border-radius: 7px;
+}
+
+div#map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+}

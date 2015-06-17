@@ -2,7 +2,9 @@
 <div class="row">
   <div class="columns large-12">
     <h3><%= @mural.name %></h3>
-    <%= link_to "Edit Art", edit_mural_path(@mural) %>
+    <% if current_user.id == @mural.user_id %>
+      <%= link_to "Edit Art", edit_mural_path(@mural) %>
+    <% end %>
   </div>
 </div>
 

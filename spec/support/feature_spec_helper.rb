@@ -10,7 +10,7 @@ module FeatureSpecHelper
         "website" => "fake.com"
       },
       "credentials" => {
-        "token" => ENV['USER_TOKEN']
+        "token" => 'ENV['USER_TOKEN']'
       }
     })
   end

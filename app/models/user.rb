@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
     user
   end
 
-  def user_images(user)
-    InstagramService.get_user_instagrams(user)
+  def user_images
+    InstagramService.get_user_instagrams(self)
   end
 
 end

@@ -27,8 +27,8 @@
       <li><span>Email:</span> <%= @user.email %></li>
       <li><span>Description:</span> <%= @user.description %></li>
       <li><span>Occupation:</span> <%= @user.occupation %></li>
-      <li><span>Twitter:</span> <%= link_to @user.twitter_link %></li>
-      <li><span>Facebook:</span> <%= link_to  @user.facebook_link %></li>
+      <li><span>Twitter:</span> <%= link_to '@tracy', @user.twitter_link %></li>
+      <li><span>Facebook:</span> <%= link_to 'facebook.com/tracy', @user.facebook_link %></li>
 
     </ul>
   </div>
@@ -52,9 +52,10 @@
 
 <div class="row">
 
-  <% @user.user_images(@user).each do |img| %>
+  <% @user.user_images.each do |img| %>
     <div class="mural_image columns large-3">
-      <%= image_tag img %>
+      <%= link_to "Mural", new_mural_path(:image => img['url'], :latitude => img['latitude'], :longitude => img['longitude'] ) %>
+      <%= image_tag img['url'] %>
     </div>
   <% end %>
 </div>

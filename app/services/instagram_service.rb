@@ -9,10 +9,33 @@ class InstagramService
 
   def self.get_user_instagrams(user)
     client = Instagram.client(:access_token => user.token)
-    client.user_recent_media.map do |media|
+
+    image_data = []
+    client.user_recent_media.each do |media|
       if media.tags == ["harrisburgmuralproject"]
-        media.images.standard_resolution.url
+        image_data << {
+          'url'       => media.images.standard_resolution.url,
+          'latitude'  => get_latitude(media),
+          'longitude' => get_longitude(media)
+        }
       end
+    end
+    image_data
+  end
+
+  def self.get_latitude(media)
+    if media.location
+      media.location.latitude
+    else
+      nil
+    end
+  end
+
+  def self.get_longitude(media)
+    if media.location
+      media.location.longitude
+    else
+      nil
     end
   end
 
