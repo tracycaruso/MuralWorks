@@ -20,20 +20,7 @@ $(document).ready(function() {
       var marker, popupContent, properties;
       marker = e.layer;
       properties = marker.feature.properties;
-      popupContent =
-      '<div class="popup">' +
-      '<h3>' + properties.name +
-      '</h3>' +
-      '<p>' +
-      properties.latitude +
-      '</p>' +
-      '<p>' +
-      properties.longitude +
-      '</p>' +
-      '<img src="'+
-      properties.image +
-      '"/>' +
-      '</div>';
+      popupContent = '<div class="popup">' + '<h3>' + properties.name + '</h3>' + '<p>' + properties.latitude + '</p>' +  '<p>' + properties.longitude + '</p>' +'</div>';
       return marker.bindPopup(popupContent, {
         closeButton: false,
         minWidth: 320

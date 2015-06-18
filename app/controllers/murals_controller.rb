@@ -1,6 +1,36 @@
 class MuralsController < ApplicationController
   def index
     @murals = Mural.all
+    @geojson = Array.new
+
+    @murals.each do |mural|
+      @geojson << {
+        type: 'Feature',
+        geometry:{
+          type: 'Point',
+          coordinates: [mural.longitude.to_f, mural.latitude.to_f]
+        },
+        properties: {
+          name: mural.name,
+          latitude: mural.latitude,
+          longitude: mural.longitude,
+          image: mural.image,
+          :'marker-color' => '#00607d',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }
+    end
+
+  end
+
+  def recent
+    @murals = Mural.all
   end
 
   def new
@@ -28,7 +58,7 @@ class MuralsController < ApplicationController
   def update
     @mural = Mural.find(params[:id])
     @mural.update(mural_params)
-    redirect_to @mural   
+    redirect_to @mural
 
   end
 
@@ -37,4 +67,5 @@ class MuralsController < ApplicationController
   def mural_params
     params.require(:mural).permit(:name, :image, :latitude, :longitude, :artist_name, :date_created, :description, :user_id)
   end
+
 end

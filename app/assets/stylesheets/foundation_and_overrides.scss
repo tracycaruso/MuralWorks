@@ -1694,8 +1694,13 @@ p{
 }
 
 div#map {
-position: absolute;
-top: 0;
-bottom: 0;
-width: 100%;
+
+min-height: 800px;
+display: block;
+
+}
+
+.mural-page .container{
+  max-width:100%;
+  padding-top:0px;
 }
