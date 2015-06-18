@@ -24,13 +24,7 @@ $(document).ready(function() {
       '<div class="popup">' +
       '<h3>' + properties.name +
       '</h3>' +
-      '<p>' +
-      properties.latitude +
-      '</p>' +
-      '<p>' +
-      properties.longitude +
-      '</p>' +
-      '<img src="'+
+      '<img class="mural-map" src="'+
       properties.image +
       '"/>' +
       '</div>';
