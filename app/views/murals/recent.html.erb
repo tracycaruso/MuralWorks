@@ -7,7 +7,7 @@
 </div>
 
 <div class="row" >
-    <% @murals.each do |mural| %>
+    <% @murals.most_recent.each do |mural| %>
     <div class="large-6 columns murals-list">
       <h3><%= link_to mural.name, mural_path(mural) %></h3>
       <%= image_tag mural.image %>

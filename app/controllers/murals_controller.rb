@@ -62,6 +62,12 @@ class MuralsController < ApplicationController
 
   end
 
+  def destroy
+    @mural = Mural.find(params[:id])
+    @mural.destroy
+    redirect_to murals_path
+  end
+
 
   private
   def mural_params

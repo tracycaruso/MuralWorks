@@ -20,8 +20,25 @@ class User < ActiveRecord::Base
     user
   end
 
-  def user_images
-    InstagramService.get_user_instagrams(self)
+  def user_unsaved_images
+    murals = []
+    InstagramService.get_user_instagrams(self).each do |img|
+      if Mural.find_by(image: img['url']) == nil
+        murals << img
+      end
+    end
+    murals
+  end
+
+
+  def user_saved_images
+
+    InstagramService.get_user_instagrams(self).map do |img|
+      mural = Mural.find_by(image: img['url'])
+      if mural
+        mural
+      end
+    end.compact
   end
 
 end

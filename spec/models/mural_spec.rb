@@ -19,4 +19,8 @@ RSpec.describe Mural, type: :model do
     expect(Mural.most_recent.count).to eq(3)
   end
 
+  it "only one mural can have the same image url" do
+
+  end
+
 end

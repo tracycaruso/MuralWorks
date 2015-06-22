@@ -34,5 +34,18 @@ $(document).ready(function() {
       });
     });
 
+    $('article li').click(function(e) {
+      var current, currentlyClickedName;
+      current = $(this);
+      currentlyClickedName = current.find('h2').text();
+      return map.featureLayer.eachLayer(function(marker) {
+        var id;
+        if (marker.feature.properties.name === currentlyClickedName) {
+          id = layer._leaflet_id;
+          return map._layers[id].openPopup();
+        }
+      });
+    });
+
 
 });

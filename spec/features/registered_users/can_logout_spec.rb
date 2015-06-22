@@ -6,6 +6,6 @@ RSpec.describe "Registered user can logout with omniauth", type: :feature do
     visit root_path
     click_link logout
     expect(page).not_to have_content("Welcome Tracy Caruso")
-    expect(page).to have_content("Login")
+    expect(page).to have_content("Sign In")
   end
 end

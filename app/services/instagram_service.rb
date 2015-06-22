@@ -18,6 +18,7 @@ class InstagramService
           'latitude'  => get_latitude(media),
           'longitude' => get_longitude(media)
         }
+  
       end
     end
     image_data

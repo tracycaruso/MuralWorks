@@ -51,11 +51,23 @@
 </div>
 
 <div class="row">
-
-  <% @user.user_images.each do |img| %>
+  <h1> Unsaved Murals </h1>
+  <% @user.user_unsaved_images.each do |img| %>
     <div class="mural_image columns large-3">
       <%= link_to "Mural", new_mural_path(:image => img['url'], :latitude => img['latitude'], :longitude => img['longitude'] ) %>
       <%= image_tag img['url'] %>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="row">
+  <h1> Saved Murals </h1>
+  <% @user.user_saved_images.each do |mural| %>
+    <div class="mural_image_saved columns large-3">
+      <%= link_to "Edit", edit_mural_path(mural) %>
+       <%= link_to "Delete", mural_path(mural), method: "delete" %>
+      <%= image_tag mural.image %>
     </div>
   <% end %>
 </div>

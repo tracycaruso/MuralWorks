@@ -4,7 +4,7 @@ RSpec.describe "Registered user can edit profile", type: :feature do
   it "can edit profile" do
     visit root_path
     mock_auth_hash
-    click_link "Login with Instagram"
+    click_link "Sign In"
     click_link "Edit Profile"
     fill_in "user[full_name]", with: "Megan Davis"
     fill_in "user[image_url]", with: "Image Url"
