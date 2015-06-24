@@ -15,7 +15,7 @@ RSpec.describe Mural, type: :model do
     @user.murals.create(@mural4)
   end
 
-  it "can return the last three most recent murals" do
+  xit "can return the last three most recent murals" do
     expect(Mural.most_recent.count).to eq(3)
   end
 

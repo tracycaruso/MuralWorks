@@ -13,7 +13,7 @@ feature "a guest user can view most recent artwork" do
     @user.murals.create(@mural4)
   end
 
-  scenario "can view the top 3 most recent artworks" do
+  xscenario "can view the top 3 most recent artworks" do
     visit root_path
     click_link "Most Recent Art"
     expect(page).to have_content("Mural 4")

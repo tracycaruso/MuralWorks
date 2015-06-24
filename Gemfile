@@ -16,6 +16,7 @@ gem 'hurley'
 gem 'geocoder'
 gem 'foundation-rails'
 gem 'responders'
+gem "skylight"
 
 
 

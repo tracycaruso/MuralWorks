@@ -43,6 +43,7 @@
   </div>
 </div>
 
+<% if current_user || current_user.admin? %>
 <div class="row">
   <div class="columns large-12">
     <h4>Recent Photos</h4>
@@ -71,3 +72,4 @@
     </div>
   <% end %>
 </div>
+<% end %>

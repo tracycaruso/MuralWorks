@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Registered user can add new mural location", type: :feature do
-  it "can add a new mural location" do
+  xit "can add a new mural location" do
     visit root_path
     mock_auth_hash
     click_link "Sign In"

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Registered user can edit profile", type: :feature do
-  it "can edit profile" do
+  xit "can edit profile" do
     visit root_path
     mock_auth_hash
     click_link "Sign In"

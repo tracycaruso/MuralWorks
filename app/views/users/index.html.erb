@@ -9,8 +9,8 @@
 </div>
 
 
-    <% @users.each do |user| %>
-    <div class="row">
+<% @users.each do |user| %>
+  <div class="row">
     <div class="columns large-2 user-photo">
       <%= image_tag user.image_url %>
     </div>
@@ -18,4 +18,4 @@
       <h4><%= link_to user.user_name, user_path(user) %></h4>
     </div>
   </div>
-    <% end %>
+<% end %>
