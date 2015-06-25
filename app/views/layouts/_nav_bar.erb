@@ -5,9 +5,9 @@
         </div>
         <nav class="large-10 columns">
             <ul>
-                <li><%= link_to "Local Art",      map_path %></li>
+                <li><%= link_to "Local Art",      murals_path %></li>
                 <li><%= link_to "Recent Art",     recent_path %></li>
-                <li><%= link_to "All Art",        murals_path %></li>
+                <li><%= link_to "All Art",        all_murals_path %></li>
                 <li><%= link_to "User Directory", users_path %></li>
                     <% if current_user %>
                         <li><%= link_to "Add Art",   new_mural_path %><</li>

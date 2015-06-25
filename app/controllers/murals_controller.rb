@@ -3,10 +3,6 @@ class MuralsController < ApplicationController
 
   def index
     @murals = Mural.all
-  end
-
-  def map
-    @murals = Mural.all
     @geojson = Array.new
 
     @murals.each do |mural|
@@ -33,6 +29,10 @@ class MuralsController < ApplicationController
       format.json { render json: @geojson }
     end
 
+  end
+
+  def all_murals
+    @murals = Mural.all
   end
 
   def recent

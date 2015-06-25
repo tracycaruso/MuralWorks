@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :murals
 
   get 'recent', to: 'murals#recent'
-  get 'map', to: 'murals#map'
+  get 'all_murals', to: 'murals#all_murals'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
