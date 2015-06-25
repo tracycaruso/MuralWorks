@@ -10,7 +10,10 @@
     <% @murals.each do |mural| %>
     <div class="large-6 columns murals-list">
       <h3><%= link_to mural.name, mural_path(mural) %></h3>
-      <%= image_tag mural.image %>
+        <%= image_tag mural.image %>
+        <% if !current_user.nil? && current_user.admin? %>
+          <h5><%= link_to "Delete", mural_path(mural), method: "delete", data: { confirm: "You sure?" }  %></h5>
+        <% end %>
     </div>
     <% end %>
 </div>
