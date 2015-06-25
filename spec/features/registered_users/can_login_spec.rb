@@ -9,12 +9,4 @@ RSpec.describe "Registered user can Sign In with omniauth", type: :feature do
       expect(page).to have_content "instagram user"
     end
   end
-
-  describe "user with invalid information" do
-    xit "is can signin" do
-      visit root_path
-      OmniAuth.config.mock_auth[:instagram] = :invalid_credentials
-      click_link "Sign In"
-    end
-  end
 end

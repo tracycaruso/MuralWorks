@@ -8,6 +8,9 @@
 </div>
 <div class="row">
   <div class="columns large-12">
+    <div class="flash-2">
+      <%= render 'layouts/flash' %>
+    </div>
     <%= form_for(@mural) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>

@@ -49,6 +49,7 @@ class MuralsController < ApplicationController
     if @mural.save
       redirect_to @mural
     else
+      flash.now[:errors] = @mural.errors.full_messages.join(", ")
       render :new
     end
   end

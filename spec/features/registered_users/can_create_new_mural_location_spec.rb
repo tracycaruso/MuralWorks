@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Registered user can add new mural location", type: :feature do
-  xit "can add a new mural location" do
+  it "can add a new mural location" do
     visit root_path
     mock_auth_hash
     click_link "Sign In"
@@ -15,7 +15,6 @@ RSpec.describe "Registered user can add new mural location", type: :feature do
     fill_in "mural[description]", with: "Sooo pretty"
     click_button "Submit"
     expect(page).to have_content("Pretty Mural")
-    expect(page).to have_content("Image Url")
     expect(page).to have_content("10")
     expect(page).to have_content("10")
     expect(page).to have_content("Megan Davis")
