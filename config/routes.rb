@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   resources :users
   resources :murals
-  resources :dashboards
-  get 'auth/:provider/callback', to: 'sessions#create'
+
   get 'recent', to: 'murals#recent'
+  get 'map', to: 'murals#map'
+
+  get 'auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
   root 'static_pages#home'
-  get "static_pages/about"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

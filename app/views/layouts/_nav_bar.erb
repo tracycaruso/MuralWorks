@@ -1,0 +1,22 @@
+<div class="outer-nav">
+    <div class="row">
+        <div class="large-2 columns">
+            <h1 class="logo-text"><%= link_to "Street Walk", root_path %></h1>
+        </div>
+        <nav class="large-10 columns">
+            <ul>
+                <li><%= link_to "Local Art",      map_path %></li>
+                <li><%= link_to "Recent Art",     recent_path %></li>
+                <li><%= link_to "All Art",        murals_path %></li>
+                <li><%= link_to "User Directory", users_path %></li>
+                    <% if current_user %>
+                        <li><%= link_to "Add Art",   new_mural_path %><</li>
+                        <li><%= link_to "Dashboard", user_path(current_user) %></li>
+                        <li><%= link_to "Logout",    logout_path, method: :delete %></li>
+                    <% else %>
+                        <li><%= link_to "Sign In", "/auth/instagram"%></li>
+                    <% end %>
+            </ul>
+        </nav>
+    </div>
+</div>

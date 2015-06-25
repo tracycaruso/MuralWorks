@@ -1,5 +1,11 @@
 class MuralsController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+
   def index
+    @murals = Mural.all
+  end
+
+  def map
     @murals = Mural.all
     @geojson = Array.new
 
@@ -65,13 +71,20 @@ class MuralsController < ApplicationController
   def destroy
     @mural = Mural.find(params[:id])
     @mural.destroy
-    redirect_to murals_path
+    redirect_to user_path(current_user)
   end
 
 
   private
   def mural_params
     params.require(:mural).permit(:name, :image, :latitude, :longitude, :artist_name, :date_created, :description, :user_id)
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+        redirect_to root_path
+    end
   end
 
 end

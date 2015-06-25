@@ -1,0 +1,5 @@
+<h3>Welcome <%= @user.full_name %></h3>
+<ul>
+  <li><%= link_to 'Edit Profile', edit_user_path(@user) %> | </li>
+  <li><%= link_to 'Add Street Art', new_mural_path %></li>
+<ul>

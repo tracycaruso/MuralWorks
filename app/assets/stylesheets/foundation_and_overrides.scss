@@ -1616,9 +1616,9 @@ h2{
   margin-top: 60px;
 }
 
-h3{
-  font-family: 'titillium_weblight';
-  font-size: 3rem;
+h3 {
+  font-family: 'aleobold';
+  font-size: 2rem;
 }
 
 p{
@@ -1655,13 +1655,11 @@ p{
   font-weight:bold;
 }
 
-.mural_image, .user-photo{
-  margin-bottom:20px;
-  img{
-    border:1px solid #ccc;
-    border-radius: 5px;
-
-  }
+.user-photo{
+  padding-left:0px;
+}
+.user-photo img{
+  width: 100%;
 }
 
 
@@ -1718,4 +1716,120 @@ display: block;
 
 .columns + .columns:last-child{
   float: left;
+}
+
+
+.welcome{
+  background-color: #000;
+  margin-bottom: 10px;
+  h3{
+    color: #fff;
+    float: left;
+  }
+  ul {
+      display: inline-block;
+      float: left;
+      padding-top: 18px;
+      margin-bottom: 0px;
+      margin-left: 38px;
+      font-size: 13px;
+    }
+  li{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    &:nth-child(1){
+      padding-right: 7px;
+      border-right: 2px solid #fff;
+    }
+    a{
+      color: #fff;
+      &:hover{
+        color: #ccc;
+      }
+    }
+  }
+}
+
+.recent .large-3{
+  margin: 10px 0px;
+  padding: 0px 5px;
+  position: relative;
+}
+
+.unsaved .large-3, .final .large-3{
+  position: relative;
+  margin: 10px 0px;
+}
+
+.recent h4, .unsaved h4, .final h4{
+  color: #fff;
+  position: absolute;
+  background-color: #000;
+  padding:5px 10px;
+  bottom:0px;
+  a{
+    color:#fff;
+    &:hover{
+      color:#999;
+    }
+  }
+}
+.final h4:nth-child(1){
+  bottom: 47px;
+}
+
+.recently-added, .unsaved-murals, .saved-murals{
+  background-color:#3b596a;
+  h4{
+    color:#fff;
+    font-family: 'aleobold';
+    font-size: 1.5rem;
+  }
+}
+
+.recently-added.main{
+  margin: 0px 15px 11px;
+  width: 97%;
+  h3{
+    color:#fff;
+    }
+}
+
+.saved-murals{
+  background-color: #427676;
+  margin-top:20px;
+}
+
+.unsaved-murals{
+  background-color:#3f9a82;
+}
+
+.profile .large-6{
+  padding-left:0px;
+  padding-top:20px;
+  a{
+    color: #999;
+    &:hover{
+      color: #ccc;
+    }
+  }
+}
+
+.final{
+  padding-bottom: 30px;
+}
+
+
+.add-art img{
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.flash{
+  z-index: 9000;
+  margin-top: 59px;
+  color: red;
+  background-color: white;
+
 }

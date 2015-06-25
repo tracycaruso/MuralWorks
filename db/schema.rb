@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612024748) do
+ActiveRecord::Schema.define(version: 20150624205122) do
 
   create_table "murals", force: :cascade do |t|
     t.string   "name"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20150612024748) do
     t.string   "full_name"
     t.string   "user_name"
     t.string   "email"
-    t.string   "password_digest"
     t.string   "provider"
     t.string   "token"
     t.string   "uid"
@@ -48,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150612024748) do
     t.string   "dribbble_link"
     t.string   "website_url"
     t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

@@ -1,12 +1,17 @@
 class InstagramService
+  attr_reader :user
 
-  def self.get_user_instagrams(user)
+  def initialize(user)
+    @user = user
+  end
+
+  def get_user_instagrams
     client = Instagram.client(:access_token => user.token)
     image_data = []
     client.user_recent_media.each do |media|
       if media.tags == ["harrisburgmuralproject"]
         image_data << {
-          'url'       => media.images.standard_resolution.url,
+          'image'       => media.images.standard_resolution.url,
           'latitude'  => get_latitude(media),
           'longitude' => get_longitude(media)
         }
@@ -15,7 +20,7 @@ class InstagramService
     image_data
   end
 
-  def self.get_latitude(media)
+  def get_latitude(media)
     if media.location
       media.location.latitude
     else
@@ -23,7 +28,7 @@ class InstagramService
     end
   end
 
-  def self.get_longitude(media)
+  def get_longitude(media)
     if media.location
       media.location.longitude
     else

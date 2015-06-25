@@ -1,75 +1,91 @@
 <% provide(:title, @user.user_name) %>
+    <div class="row welcome">
+      <div class="columns large-12">
+        <% if current_user %>
+          <%= render 'layouts/user_welcome' %>
+        <% else %>
+          <%= render 'layouts/visitor_profile' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="columns large-3 user-photo">
+          <%= image_tag @user.image_url %>
+        </div>
+
+        <div class="columns large-9">
+          <div class="row">
+            <div class="columns large-12 recently-added">
+              <h4>Recently Added Murals</h4>
+            </div>
+          </div>
+
+          <div class="row recent">
+            <% @user.saved_murals.last(4).each do |mural| %>
+                <div class="columns large-3">
+                    <%= link_to(image_tag(mural.image), mural_path(mural)) %>
+                    <h4><%= link_to mural.name, mural_path(mural) %></h4>
+                </div>
+            <% end %>
+          </div>
+        </div>
+    </div>
+
+    <div class="row profile">
+        <div class="columns large-6">
+            <ul class="profile-list">
+                <li><span><%= display_present_attribute('User Name',   @user.user_name)%></li>
+                <li><span><%= display_present_attribute('Email',       @user.email)%></li>
+                <li><span><%= display_present_attribute('Description', @user.description)%></li>
+                <li><span><%= display_present_attribute('Occupation',  @user.occupation)%></li>
+                <li><span><%= display_present_link((link_to 'Follow Me on Twitter', @user.twitter_link))%></li>
+                <li><span><%= display_present_link((link_to 'Like Me on Facebook', @user.facebook_link))%></li>
+            </ul>
+        </div>
+
+        <div class="columns large-6">
+            <ul class="profile-list">
+                <li><span><%= display_present_link((link_to 'Link up with Me', @user.linkedin_link))%></li>
+                <li><span><%= display_present_link((link_to 'Follow Me on Dribble', @user.dribbble_link))%></li>
+                <li><span><%= display_present_link((link_to 'Follow Me on Ello', @user.ello_link))%></li>
+                <li><span><%= display_present_link((link_to 'Follow Me on Instagram', @user.instagram_link))%></li>
+                <li><span><%= display_present_link((link_to 'Visit my Site', @user.website_url))%></li>
+            </ul>
+        </div>
+        <hr/>
+    </div>
 
 
-<div class="row">
-  <div class="columns large-2 user-photo">
-    <%= image_tag @user.image_url %>
-  </div>
-  <div class="columns large-10">
-    <h3>Welcome <%= @user.full_name %></h3>
-    <%= link_to 'Edit Profile', edit_user_path(@user) %> |
-    <%= link_to 'Add Street Art', new_mural_path %>
-  </div>
-</div>
+  <% if current_user %>
+    <div class="row">
+      <div class="columns large-12 unsaved-murals">
+        <h4>Unsaved Murals</h4>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="columns large-12">
-    <h4>Profile</h4>
-  </div>
-</div>
+    <div class="row unsaved">
+        <% @user.unsaved_murals.each do |mural| %>
+            <div class="mural_image columns large-3">
+                <h4><%= link_to "Add Mural", new_mural_path(:image => mural['image'], :latitude => mural['latitude'], :longitude => mural['longitude'] ) %></h4>
+                <%= image_tag mural['image'] %>
+            </div>
+        <% end %>
+    </div>
 
+    <div class="row">
+      <div class="columns large-12 saved-murals">
+        <h4>Saved Murals</h4>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="columns large-6">
-    <ul class="profile-list">
-
-      <li><span>User Name:</span> <%= @user.user_name %></li>
-      <li><span>Email:</span> <%= @user.email %></li>
-      <li><span>Description:</span> <%= @user.description %></li>
-      <li><span>Occupation:</span> <%= @user.occupation %></li>
-      <li><span>Twitter:</span> <%= link_to '@tracy', @user.twitter_link %></li>
-      <li><span>Facebook:</span> <%= link_to 'facebook.com/tracy', @user.facebook_link %></li>
-
-    </ul>
-  </div>
-  <div class="columns large-6">
-    <ul class="profile-list">
-      <li><span>Linkedin:</span> <%= link_to  @user.linkedin_link %></li>
-      <li><span>Dribble:</span> <%= link_to  @user.dribbble_link %></li>
-      <li><span>Ello:</span> <%= link_to  @user.ello_link %></li>
-      <li><span>Instagram:</span> <%= link_to @user.instagram_link %></li>
-      <li><span>Website:</span> <%= link_to @user.website_url %></li>
-    </ul>
-  </div>
-</div>
-
-<% if current_user || current_user.admin? %>
-<div class="row">
-  <div class="columns large-12">
-    <h4>Recent Photos</h4>
-    <p>Click image below to add to the mural project or edit</p>
-  </div>
-</div>
-
-<div class="row">
-  <h1> Unsaved Murals </h1>
-  <% @user.user_unsaved_images.each do |img| %>
-    <div class="mural_image columns large-3">
-      <%= link_to "Mural", new_mural_path(:image => img['url'], :latitude => img['latitude'], :longitude => img['longitude'] ) %>
-      <%= image_tag img['url'] %>
+    <div class="row final">
+        <% @user.saved_murals.each do |mural| %>
+            <div class="mural_image_saved columns large-3">
+                <h4><%= link_to "Edit",   edit_mural_path(mural) %></h4>
+                <h4><%= link_to "Delete", mural_path(mural), method: "delete", data: { confirm: "You sure?" }  %></h4>
+                <%= image_tag mural.image %>
+            </div>
+        <% end %>
     </div>
   <% end %>
-</div>
-
-
-<div class="row">
-  <h1> Saved Murals </h1>
-  <% @user.user_saved_images.each do |mural| %>
-    <div class="mural_image_saved columns large-3">
-      <%= link_to "Edit", edit_mural_path(mural) %>
-       <%= link_to "Delete", mural_path(mural), method: "delete" %>
-      <%= image_tag mural.image %>
-    </div>
-  <% end %>
-</div>
-<% end %>
