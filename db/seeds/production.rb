@@ -8,6 +8,7 @@ class Seed
 
   def generate
     create_murals
+    user_create
   end
 
   def user_create
