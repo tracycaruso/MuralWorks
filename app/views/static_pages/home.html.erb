@@ -1,50 +1,48 @@
 <% provide(:title, "Home") %>
-<div class="row">
-  <div class="flash">
-    <%= render 'layouts/flash' %>
+  <div class="row">
+      <div class="flash">
+          <%= render 'layouts/flash' %>
+      </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="large-6 columns">
-    <h1 class="logo">Street Walk</h1>
-    <p>Find local street art in Harrisburg.</p>
-    <p>Street Walk allows you to search for local street art in your area and post new street around the capital.</p>
-    <p>To post new street art, take a picture with your instagram account and tag it #harrisburgmuralproject. Then visit StreetWalk.com and login using your instagram account. After logging in you can post more information related to your street art and submit it to our map.</p>
+  <div class="row">
+      <div class="large-6 columns">
+          <h1 class="logo">Street Walk</h1>
+          <p>Find local street art in Harrisburg.</p>
+          <p>Street Walk allows you to search for local street art in your area and post new street around the capital.</p>
+          <p>To post new street art, take a picture with your instagram account and tag it #harrisburgmuralproject. Then visit StreetWalk.com and login using your instagram account. After logging in you can post more information related to your street art and submit it to our map.</p>
 
-      <%= link_to '/auth/instagram' do %>
-      <%= link_to(image_tag('sign-in.png', :class => 'sign-in'), murals_path) %>
-      <% end %>
+          <%= link_to '/auth/instagram' do %>
+            <%= link_to(image_tag('sign-in.png', :class => 'sign-in'), murals_path) %>
+          <% end %>
+      </div>
 
-    </div>
-  <div class="large-6 columns">
+      <div class="large-6 columns">
+      </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="large-12 columns triangle-holder">
-    <%= image_tag('triangle.png', :class => 'triangle') %>
+  <div class="row">
+      <div class="large-12 columns triangle-holder">
+          <%= image_tag('triangle.png', :class => 'triangle') %>
+      </div>
   </div>
-</div>
 
 
   <div class="middle-block">
-    <%= image_tag('middle.png') %>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <h2>Find Street Art</h2>
-    </div>
+      <%= image_tag('middle.png') %>
   </div>
 
   <div class="row">
-    <div class="large-8 columns large-offset-2"><%= link_to(image_tag('near.png', :class => 'buttons'), murals_path) %><%= link_to(image_tag('popular.png', :class => 'buttons'), all_murals_path) %><%= link_to(image_tag('recent.png', :class => 'buttons'), recent_path) %></div>
-    <div class="large-offset-2"></div>
+      <div class="large-12 columns">
+          <h2>Find Street Art</h2>
+      </div>
+  </div>
 
-
+  <div class="row">
+      <div class="large-8 columns large-offset-2"><%= link_to(image_tag('near.png', :class => 'buttons'), murals_path) %><%= link_to(image_tag('popular.png', :class => 'buttons'), all_murals_path) %><%= link_to(image_tag('recent.png', :class => 'buttons'), recent_path) %></div>
+      <div class="large-offset-2"></div>
   </div>
 
   <div class="bottom">
-
       <%= image_tag('bottom.png', :class => 'bottom') %>
   </div>
