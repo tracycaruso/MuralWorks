@@ -5,9 +5,9 @@ module ApplicationHelper
 	  end
 	end
 
-  def display_present_link(link)
+  def display_present_link(link, url)
     if link.present?
-	     link
+	     url
 	  end
 	end
 end

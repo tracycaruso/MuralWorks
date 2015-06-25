@@ -24,7 +24,7 @@
           <div class="row recent">
             <% @user.saved_murals.last(4).each do |mural| %>
                 <div class="columns large-3">
-                    <%= link_to(image_tag(mural.image), mural_path(mural)) %>
+                      <%= link_to(image_tag(mural.image), mural_path(mural)) %>
                     <h4><%= link_to mural.name, mural_path(mural) %></h4>
                 </div>
             <% end %>
@@ -39,18 +39,18 @@
                 <li><span><%= display_present_attribute('Email',       @user.email)%></li>
                 <li><span><%= display_present_attribute('Description', @user.description)%></li>
                 <li><span><%= display_present_attribute('Occupation',  @user.occupation)%></li>
-                <li><span><%= display_present_link((link_to @user.twitter_link, @user.twitter_link))%></li>
-                <li><span><%= display_present_link((link_to @user.facebook_link, @user.facebook_link))%></li>
+                <li><span><%= display_present_link(@user.twitter_link , (link_to @user.twitter_link, @user.twitter_link))%></li>
+                <li><span><%= display_present_link(@user.facebook_link, (link_to @user.facebook_link, @user.facebook_link))%></li>
             </ul>
         </div>
 
         <div class="columns large-6">
             <ul class="profile-list">
-                <li><span><%= display_present_link((link_to @user.linkedin_link, @user.linkedin_link))%></li>
-                <li><span><%= display_present_link((link_to @user.dribbble_link, @user.dribbble_link))%></li>
-                <li><span><%= display_present_link((link_to @user.ello_link, @user.ello_link))%></li>
-                <li><span><%= display_present_link((link_to @user.instagram_link, @user.instagram_link))%></li>
-                <li><span><%= display_present_link((link_to @user.website_url, @user.website_url))%></li>
+                <li><span><%= display_present_link(@user.linkedin_link, (link_to @user.linkedin_link, @user.linkedin_link))%></li>
+                <li><span><%= display_present_link(@user.dribbble_link, (link_to @user.dribbble_link, @user.dribbble_link))%></li>
+                <li><span><%= display_present_link(@user.ello_link, (link_to @user.ello_link, @user.ello_link))%></li>
+                <li><span><%= display_present_link(@user.instagram_link, (link_to @user.instagram_link, @user.instagram_link))%></li>
+                <li><span><%= display_present_link(@user.website_url, (link_to @user.website_url, @user.website_url))%></li>
             </ul>
         </div>
         <hr/>
